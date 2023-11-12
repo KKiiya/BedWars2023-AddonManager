@@ -1,0 +1,7 @@
+name: BedWars2023-AddonManager
+version: '${project.version}'
+main: me.kiiya.addonmanager.AddonManager
+softdepend: [ BedWars2023, BWProxy2023 ]
+commands:
+  addons:
+    description: Open a gui to show available addons for BedWars2023
