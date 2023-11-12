@@ -3,7 +3,7 @@ package me.kiiya.addonmanager.command;
 import com.google.gson.JsonObject;
 import com.tomkeuper.bedwars.api.language.Language;
 import me.kiiya.addonmanager.utils.Utility;
-import me.kiiya.addonmanager.menu.AddonsMenu;
+import me.kiiya.addonmanager.menu.bedwars2023.AddonsMenu;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -38,10 +38,6 @@ public class AddonInventoryCommand implements CommandExecutor {
             option = strings[0];
         }
 
-        JsonObject json = new JsonObject();
-        json.addProperty("player", p.getName());
-        json.addProperty("server", p.getServer().getName());
-        bedWars.getRedisClient().sendMessage(json, "addon-manager");
         new AddonsMenu(p, option);
         return false;
     }

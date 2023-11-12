@@ -1,6 +1,7 @@
-package me.kiiya.addonmanager.menu;
+package me.kiiya.addonmanager.menu.bedwars2023;
 
 import com.tomkeuper.bedwars.api.addon.Addon;
+import me.kiiya.addonmanager.menu.GUIHolder;
 import me.kiiya.addonmanager.utils.Utility;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

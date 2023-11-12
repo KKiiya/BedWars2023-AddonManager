@@ -83,7 +83,7 @@
             <artifactId>BWProxy2023</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/libs/proxy-plugin-1.2.5.jar</systemPath>
+            <systemPath>${project.basedir}/libs/proxy-plugin-1.0-SNAPSHOT.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>de.tr7zw</groupId>

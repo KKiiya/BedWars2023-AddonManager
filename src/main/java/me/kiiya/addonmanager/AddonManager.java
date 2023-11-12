@@ -1,11 +1,13 @@
 package me.kiiya.addonmanager;
 
 import com.tomkeuper.bedwars.api.BedWars;
+import me.kiiya.addonmanager.command.ProxyAddonInventory;
 import me.kiiya.addonmanager.utils.Utility;
 import me.kiiya.addonmanager.command.AddonInventoryCommand;
 import me.kiiya.addonmanager.listeners.InventoryListener;
 import me.kiiya.addonmanager.listeners.bedwars2023.MessageReceive;
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.IllegalPluginAccessException;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class AddonManager extends JavaPlugin {
@@ -19,7 +21,11 @@ public final class AddonManager extends JavaPlugin {
 
             getLogger().info(Utility.c("&eLoading listeners..."));
             Bukkit.getPluginManager().registerEvents(new InventoryListener(), this);
-            Bukkit.getPluginManager().registerEvents(new MessageReceive(), this);
+            try {
+                Bukkit.getPluginManager().registerEvents(new MessageReceive(), this);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             getLogger().info(Utility.c("&aListeners loaded successfully!"));
 
             getLogger().info(Utility.c("&eLoading commands..."));
@@ -32,10 +38,15 @@ public final class AddonManager extends JavaPlugin {
 
             getLogger().info(Utility.c("&eLoading listeners..."));
             Bukkit.getPluginManager().registerEvents(new InventoryListener(), getPlugins());
-            Bukkit.getPluginManager().registerEvents(new me.kiiya.addonmanager.listeners.proxy.MessageReceive(), getPlugins());
+            try {
+                Bukkit.getPluginManager().registerEvents(new me.kiiya.addonmanager.listeners.proxy.MessageReceive(), getPlugins());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             getLogger().info(Utility.c("&aListeners loaded successfully!"));
 
             getLogger().info(Utility.c("&eLoading commands..."));
+            getServer().getPluginCommand("addons").setExecutor(new ProxyAddonInventory());
             getLogger().info(Utility.c("&aCommands loaded successfully!"));
 
             getLogger().info(Utility.c("&aAddon Manager for BWProxy2023 has been enabled successfully!"));

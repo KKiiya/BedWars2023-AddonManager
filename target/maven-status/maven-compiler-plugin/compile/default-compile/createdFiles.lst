@@ -1,0 +1,13 @@
+me\kiiya\addonmanager\utils\Utility.class
+me\kiiya\addonmanager\menu\bedwars2023\AddonsMenu.class
+me\kiiya\addonmanager\menu\proxy\AddonsMenu.class
+me\kiiya\addonmanager\menu\GUIHolder.class
+me\kiiya\addonmanager\menu\proxy\ProxyConfirmMenu.class
+me\kiiya\addonmanager\utils\CachedAddon.class
+me\kiiya\addonmanager\listeners\InventoryListener.class
+me\kiiya\addonmanager\command\ProxyAddonInventory.class
+me\kiiya\addonmanager\listeners\bedwars2023\MessageReceive.class
+me\kiiya\addonmanager\menu\bedwars2023\ConfirmMenu.class
+me\kiiya\addonmanager\listeners\proxy\MessageReceive.class
+me\kiiya\addonmanager\AddonManager.class
+me\kiiya\addonmanager\command\AddonInventoryCommand.class
